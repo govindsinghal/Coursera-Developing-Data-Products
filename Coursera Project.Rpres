@@ -1,0 +1,66 @@
+Coursera Project
+========================================================
+author: Govind Singhal
+date: September 22, 2015
+
+
+========================================================
+
+Elder Population count in Chile
+
+- This application can be used to count the elder Population (64+ years)  in Chile (1992-2006)
+- In Chile there are aging population and this means to change Public Policy guidelines
+- In 1995 Chile had 36 millions of elders in Latin America and by 2025 we will have 72+ millions of elders.
+- The plot shows the elder population (64+ years) classified by age and as females and males (I also show the total population count) from 1992 to 2006
+- A good short article about aging population in Chile and Latin America is found in http://www.gerontologia.uchile.cl/docs/chien3.htm
+
+========================================================
+Load packages and data
+```{r}
+setwd("C:/aaaaaaaaaaaaa/coursera/Data science/9.Developing data product/project")
+library(knitr)
+library(rCharts)
+library(Rlab)
+library(ggplot2)
+demografia <- read.csv('instancia.csv')
+```
+
+
+========================================================
+R code shows the total elder populatio count of age 64
+```{r}
+Age <- subset(demografia, Age == 64)
+qplot(
+      Year, 
+      People, 
+      data = Age,  
+      color = Gender,
+      geom=c("point","smooth"))
+```
+
+
+
+========================================================
+R code shows the total elder populatio count of age 70
+```{r}
+Age <- subset(demografia, Age == 70)
+qplot(
+      Year, 
+      People, 
+      data = Age,  
+      color = Gender,
+      geom=c("point","smooth"))
+```
+
+
+========================================================
+R code shows the total elder populatio count of age 80
+```{r}
+Age <- subset(demografia, Age == 80)
+qplot(
+      Year, 
+      People, 
+      data = Age,  
+      color = Gender,
+      geom=c("point","smooth"))
+```
